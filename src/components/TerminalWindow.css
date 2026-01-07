@@ -1,0 +1,102 @@
+/* Terminal Window - Windows 95 Command Prompt Style */
+.terminal-content {
+  font-family: 'Terminal', 'Courier New', monospace;
+  background: #000;
+  color: #C0C0C0;
+  height: 100%;
+  padding: 8px;
+  cursor: text;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-output {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: auto;
+  white-space: pre;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* Hide scrollbar but keep scrolling ability */
+.terminal-output::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+/* For Firefox */
+.terminal-output {
+  scrollbar-width: none;
+}
+
+/* For IE and Edge */
+.terminal-output {
+  -ms-overflow-style: none;
+}
+
+.terminal-entry {
+  margin-bottom: 4px;
+}
+
+.terminal-prompt {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 2px;
+}
+
+.prompt-symbol {
+  color: #fff;
+  font-weight: bold;
+  user-select: none;
+}
+
+.terminal-input-text {
+  color: #C0C0C0;
+}
+
+.terminal-output-text {
+  color: #C0C0C0;
+  margin-left: 0;
+  margin-bottom: 8px;
+  white-space: pre;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+}
+
+/* Current input line */
+.terminal-input-line {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #C0C0C0;
+  font-family: 'Terminal', 'Courier New', monospace;
+  font-size: 14px;
+  caret-color: #C0C0C0;
+  padding: 0;
+}
+
+.terminal-input::selection {
+  background: #C0C0C0;
+  color: #000;
+}
+
+/* Blinking cursor effect */
+.terminal-input:focus {
+  caret-color: #C0C0C0;
+}
+
+
+
+
+

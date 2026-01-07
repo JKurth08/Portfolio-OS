@@ -1,0 +1,39 @@
+/* Desktop Icon Styling */
+.desktop-icon {
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: var(--z-icon);
+}
+
+.desktop-icon img {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 5px;
+  image-rendering: pixelated; /* Keep retro pixelated look */
+  filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.5));
+  pointer-events: none; /* Prevent drag on image */
+}
+
+.desktop-icon span {
+  display: block;
+  color: white;
+  font-size: 12px;
+  text-shadow: 1px 1px 2px black;
+  padding: 2px 4px;
+  word-wrap: break-word;
+}
+
+/* Selected state - blue highlight */
+.desktop-icon.selected span {
+  background: var(--win95-blue);
+  color: white;
+  outline: 1px dotted white;
+  outline-offset: -1px;
+}
+
+/* Hover effect */
+.desktop-icon:hover img {
+  filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.8));
+}

@@ -1,0 +1,114 @@
+/* About Window Content - Exact replica of original */
+.about-content {
+  padding: 24px;
+  font-family: 'Millennium', sans-serif;
+  background: #2B2B2B;
+  color: #D0D0D0;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+}
+
+.about-content h1,
+.about-content h2,
+.about-content h3 {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  color: #FFFFFF;
+}
+
+.about-content h1 {
+  font-size: 28px;
+  border-bottom: 2px solid #606060;
+  padding-bottom: 6px;
+}
+
+.about-content h2 {
+  font-size: 20px;
+}
+
+.about-content p {
+  font-family: 'Millennium', sans-serif;
+  font-size: 15px;
+  margin: 10px 0;
+  text-align: justify;
+  color: #D0D0D0;
+}
+
+.about-content .section {
+  margin-bottom: 10px;
+}
+
+.about-content .contact {
+  font-family: 'Millennium', sans-serif;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.about-content .divider {
+  border-top: 2px solid #606060;
+  margin: 18px 0;
+}
+
+.about-content strong {
+  font-family: 'Millennium-Bold', sans-serif;
+  color: #FFFFFF;
+}
+
+.about-content .resume-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.about-content .resume-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+.about-content .resume-text h2 {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+  color: #FFFFFF;
+}
+
+.about-content .resume-text a {
+  font-family: 'Millennium', sans-serif;
+  text-decoration: none;
+  color: #6EA8FE;
+  font-size: 15px;
+}
+
+.about-content .resume-text a:hover {
+  text-decoration: underline;
+  color: #9EC5FF;
+}
+
+.about-content .contact-button {
+  font-family: 'Millennium', sans-serif;
+  font-size: 15px;
+  background: none;
+  border: none;
+  color: #6EA8FE;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+
+.about-content .contact-button:hover {
+  text-decoration: underline;
+  color: #9EC5FF;
+}
+
+.about-content .contact-button:active {
+  color: #5A8FD6;
+}

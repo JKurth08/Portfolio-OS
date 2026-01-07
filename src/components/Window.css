@@ -1,0 +1,228 @@
+/* Window - Windows 95 style */
+.window {
+  position: absolute;
+  min-width: var(--window-min-width);
+  min-height: var(--window-min-height);
+  display: flex;
+  flex-direction: column;
+  background: var(--win95-gray);
+  z-index: var(--z-window-base);
+  font-family: 'Millennium', 'MSSerif', sans-serif;
+
+  /* Authentic Windows 95 border */
+  border: 1px solid var(--win95-white);
+  border-right-color: var(--win95-dark-gray);
+  border-bottom-color: var(--win95-dark-gray);
+  box-shadow:
+    inset 1px 1px 0 var(--win95-light-gray),
+    1px 1px 0 var(--win95-black);
+}
+
+/* Title Bar */
+.title-bar {
+  background: linear-gradient(to bottom, var(--win95-dark-gray), #707070);
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--win95-gray);
+  font-family: 'Millennium-Bold', sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 0 6px;
+  cursor: move;
+  margin: 2px 2px 0 2px;
+  user-select: none;
+}
+
+/* Active window has blue title bar */
+.window.active .title-bar {
+  background: linear-gradient(to bottom, var(--win95-blue-active), var(--win95-blue-light));
+  color: var(--win95-white);
+}
+
+.title-bar-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.title-bar-text img {
+  image-rendering: pixelated;
+}
+
+.title-bar-controls {
+  display: flex;
+  gap: 2px;
+}
+
+.title-bar-controls button {
+  width: 18px;
+  height: 18px;
+  background: var(--win95-gray);
+  border: 1px solid;
+  border-color: var(--win95-white) var(--win95-dark-gray) var(--win95-dark-gray) var(--win95-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.title-bar-controls button:active {
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  padding: 1px 0 0 1px;
+}
+
+/* Window Body */
+.window-body {
+  flex: 1;
+  background: var(--win95-white);
+  color: var(--win95-black);
+  padding: 0;
+  margin: 6px;
+  font-family: 'MSSerif', 'Times New Roman', serif;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow: auto;
+
+  /* 3D inset border */
+  border: 2px solid var(--win95-gray);
+  border-top-color: var(--win95-dark-gray);
+  border-left-color: var(--win95-dark-gray);
+  border-right-color: var(--win95-white);
+  border-bottom-color: var(--win95-white);
+
+  box-shadow:
+    inset 1px 1px 0 var(--win95-white),
+    inset -1px -1px 0 var(--win95-dark-gray);
+}
+
+/* Windows 95 Style Scrollbars */
+.window-body::-webkit-scrollbar {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.window-body::-webkit-scrollbar-track {
+  background: #C0C0C0 !important;
+  border-left: 1px solid #808080 !important;
+  border-top: 1px solid #808080 !important;
+}
+
+.window-body::-webkit-scrollbar-thumb {
+  background: #808080 !important;
+  border: 2px solid #000000 !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+  -webkit-border-radius: 0 !important;
+}
+
+.window-body::-webkit-scrollbar-thumb:hover {
+  background: #909090 !important;
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+}
+
+.window-body::-webkit-scrollbar-thumb:active {
+  background: #606060 !important;
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+}
+
+.window-body::-webkit-scrollbar-button {
+  background: #C0C0C0;
+  border: 1px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  height: 16px;
+  width: 16px;
+  display: block;
+}
+
+.window-body::-webkit-scrollbar-button:active {
+  border-color: #000000 #FFFFFF #FFFFFF #000000;
+}
+
+/* Arrow icons for scrollbar buttons */
+.window-body::-webkit-scrollbar-button:vertical:decrement {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M8 4 L4 10 L12 10 Z" fill="%23000"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.window-body::-webkit-scrollbar-button:vertical:increment {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M8 12 L4 6 L12 6 Z" fill="%23000"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.window-body::-webkit-scrollbar-button:horizontal:decrement {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M4 8 L10 4 L10 12 Z" fill="%23000"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.window-body::-webkit-scrollbar-button:horizontal:increment {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M12 8 L6 4 L6 12 Z" fill="%23000"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Firefox fallback - simpler styling */
+.window-body {
+  scrollbar-width: auto;
+  scrollbar-color: #C0C0C0 #FFFFFF;
+}
+
+/* Bottom Status Bar */
+.window-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 22px;
+  background: var(--win95-gray);
+  border-top: 1px solid var(--win95-dark-gray);
+  border-left: 1px solid var(--win95-dark-gray);
+  border-right: 1px solid var(--win95-white);
+  border-bottom: 1px solid var(--win95-white);
+  padding: 2px 6px;
+  font-size: 11px;
+  font-family: 'MSSerif', serif;
+  color: var(--win95-black);
+}
+
+/* Resize Handle */
+.resizer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  cursor: nwse-resize;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    transparent 46%,
+    var(--win95-dark-gray) 46%,
+    var(--win95-dark-gray) 54%,
+    transparent 54%,
+    transparent 100%
+  );
+}
+
+/* Maximized state */
+.window.maximized {
+  left: 0 !important;
+  top: 0 !important;
+  width: 100vw !important;
+  height: calc(100vh - var(--taskbar-height)) !important;
+  z-index: 999;
+}
+
+.window.maximized .resizer {
+  display: none;
+}

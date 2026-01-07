@@ -1,0 +1,212 @@
+/* Taskbar - Windows 95 Style Bottom Bar */
+.taskbar {
+  position: fixed;
+  bottom: 16px;
+  left: 18px;
+  right: 17px;
+  height: 40px;
+  background: #C0C0C0;
+  border-top: 2px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  padding: 2px 2px 2px 18px;
+  gap: 2px;
+  z-index: 1000;
+  font-family: 'Millennium', sans-serif;
+}
+
+/* Start Menu */
+.start-menu {
+  position: absolute;
+  bottom: 100%;
+  left: 0px;
+  width: 200px;
+  height: 250px;
+  background: #C0C0C0;
+  border: 2px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  padding: 2px;
+  z-index: 1001;
+  margin-bottom: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.start-menu-content {
+  flex: 1;
+  background: #C0C0C0;
+}
+
+.start-menu-bottom {
+  border-top: 2px solid;
+  border-color: #FFFFFF #C0C0C0 #C0C0C0 #FFFFFF;
+  padding: 4px;
+  background: #C0C0C0;
+}
+
+.start-menu-item {
+  width: 100%;
+  height: 50px;
+  background: #C0C0C0;
+  border: 2px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  font-family: 'Millennium-Bold', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  text-align: left;
+  user-select: none;
+}
+
+.start-menu-item:hover {
+  background: #DFDFDF;
+}
+
+.start-menu-item:active {
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  padding-left: 14px;
+  padding-top: 10px;
+}
+
+.start-menu-icon {
+  font-size: 18px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-menu-icon-img {
+  width: 50px;
+  height: 50px;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+/* Start Button */
+.start-button {
+  height: 32px;
+  padding: 0 8px;
+  background: #C0C0C0;
+  border: 2px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  font-family: 'Millennium-Bold', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+  min-width: 70px;
+}
+
+.start-button:hover {
+  background: #DFDFDF;
+}
+
+.start-button:active,
+.start-button.active {
+  border-color: #000000 #FFFFFF #FFFFFF #000000;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+.start-icon {
+  width: 26px;
+  height: 26px;
+  image-rendering: pixelated;
+}
+
+/* Divider after Start button */
+.taskbar-divider {
+  width: 2px;
+  height: 32px;
+  background: linear-gradient(to right, #808080, #FFFFFF);
+  margin: 0 2px;
+}
+
+/* Window buttons container */
+.taskbar-windows {
+  flex: 1;
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  align-items: center;
+  scrollbar-width: none;
+}
+
+.taskbar-windows::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual window button */
+.taskbar-window-btn {
+  height: 32px;
+  min-width: 120px;
+  max-width: 160px;
+  padding: 0 8px;
+  background: #C0C0C0;
+  border: 2px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  font-family: 'Millennium', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.taskbar-window-btn:hover {
+  background: #DFDFDF;
+}
+
+.taskbar-window-btn.active {
+  border-color: #000000 #FFFFFF #FFFFFF #000000;
+  background: #A0A0A0;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+.taskbar-window-icon {
+  width: 16px;
+  height: 16px;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+.taskbar-window-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* System Tray / Clock */
+.taskbar-tray {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  padding-right: 4px;
+}
+
+.taskbar-clock {
+  height: 32px;
+  padding: 0 8px;
+  background: #C0C0C0;
+  border: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  font-family: 'Millennium', sans-serif;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  user-select: none;
+}

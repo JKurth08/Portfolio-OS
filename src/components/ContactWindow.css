@@ -1,0 +1,159 @@
+/* Contact Window Content - Exact replica of original */
+.contact-content {
+  font-family: 'Millennium', sans-serif;
+  color: #000;
+  padding: 30px;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+}
+
+.contact-content h1 {
+  font-family: 'Millennium-Bold', sans-serif;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.contact-content p {
+  font-size: 15px;
+  margin: 10px 0 18px;
+  text-align: justify;
+}
+
+.contact-content a {
+  color: #0000AA;
+  text-decoration: none;
+}
+
+.contact-content a:hover {
+  text-decoration: underline;
+}
+
+/* Social Media Badges */
+.contact-content .social-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 10px 0 20px;
+}
+
+.contact-content .badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-content .badge img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  display: block;
+}
+
+.contact-content .badge span {
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+/* Form Styling */
+.contact-content label {
+  font-family: 'Millennium-Bold', sans-serif;
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.contact-content input[type="text"],
+.contact-content input[type="email"],
+.contact-content textarea {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #000;
+  font-family: 'Millennium', sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.contact-content textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.contact-content .required {
+  color: #b00;
+  margin-right: 4px;
+}
+
+.contact-content .submit-btn {
+  background-color: #C0C0C0;
+  border: 2px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  padding: 6px 12px;
+  margin-top: 14px;
+  font-family: 'Millennium-Bold', sans-serif;
+  cursor: pointer;
+}
+
+.contact-content .submit-btn:active {
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+}
+
+.contact-content .submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contact-content .note {
+  font-size: 13px;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Confirmation Page */
+.contact-content .confirmation-page {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.contact-content .confirmation-page h1 {
+  font-family: 'Millennium-Bold', sans-serif;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contact-content .confirmation-icon {
+  font-size: 80px;
+  font-weight: bold;
+  color: #008000;
+  margin: 20px 0;
+  line-height: 1;
+}
+
+.contact-content .error-page .confirmation-icon {
+  color: #b00;
+}
+
+/* Image icons for confirmation pages */
+.contact-content .confirmation-icon-img {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  display: block;
+  image-rendering: pixelated;
+  object-fit: contain;
+}
+
+.contact-content .confirmation-text {
+  font-size: 16px;
+  margin: 15px 0;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.contact-content .confirmation-page .submit-btn {
+  margin-top: 30px;
+}

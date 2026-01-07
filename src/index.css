@@ -1,0 +1,115 @@
+/* Import Windows 95 variables */
+@import './styles/variables.css';
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body - Desktop Background with CRT Monitor Bezel */
+body {
+  font-family: 'MSSerif', 'Courier New', monospace;
+  background-color: var(--win95-desktop);
+  height: 100vh;
+  overflow: hidden;
+  cursor: default;
+  user-select: none;
+
+  /* Thick CRT monitor bezel effect */
+  border: 16px solid #2a2a2a;
+  box-shadow:
+    /* Inner dark edge for depth */
+    inset 0 0 20px rgba(0, 0, 0, 0.8),
+    inset 4px 4px 8px rgba(0, 0, 0, 0.5),
+    /* Outer glow for ambient light */
+    0 0 30px rgba(0, 0, 0, 0.5);
+
+  /* Subtle highlight on bezel edges */
+  border-image: linear-gradient(
+    135deg,
+    #1a1a1a 0%,
+    #2a2a2a 25%,
+    #3a3a3a 50%,
+    #2a2a2a 75%,
+    #1a1a1a 100%
+  ) 1;
+}
+
+/* Prevent text selection on UI elements */
+button, .desktop-icon, .window {
+  user-select: none;
+}
+
+/* Allow text selection in window content */
+.window-body {
+  user-select: text;
+}
+
+/* Scrollbar styling - Windows 95 style */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--win95-light-gray);
+  border-left: 1px solid var(--win95-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--win95-gray);
+  border: 2px solid;
+  border-color: var(--win95-white) var(--win95-dark-gray) var(--win95-dark-gray) var(--win95-white);
+  min-height: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4D4D4;
+}
+
+::-webkit-scrollbar-thumb:active {
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+}
+
+::-webkit-scrollbar-button {
+  background: var(--win95-gray);
+  border: 2px solid;
+  border-color: var(--win95-white) var(--win95-dark-gray) var(--win95-dark-gray) var(--win95-white);
+  height: 16px;
+  width: 16px;
+}
+
+::-webkit-scrollbar-button:hover {
+  background: #D4D4D4;
+}
+
+::-webkit-scrollbar-button:active {
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+}
+
+/* Scrollbar arrow indicators */
+::-webkit-scrollbar-button:vertical:decrement {
+  background: var(--win95-gray) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><polygon points="8,6 4,10 12,10" fill="%23000000"/></svg>') no-repeat center;
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+  background: var(--win95-gray) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><polygon points="8,10 4,6 12,6" fill="%23000000"/></svg>') no-repeat center;
+}
+
+/* Firefox scrollbar fallback */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--win95-gray) var(--win95-light-gray);
+}
+
+/* Blink animation for boot screen cursor */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}

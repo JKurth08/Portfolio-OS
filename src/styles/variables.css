@@ -1,0 +1,54 @@
+/* Windows 95 Color Palette */
+:root {
+  /* Classic Windows 95 colors */
+  --win95-gray: #C0C0C0;
+  --win95-dark-gray: #808080;
+  --win95-light-gray: #DFDFDF;
+  --win95-blue: #000080;
+  --win95-blue-active: #0000AA;
+  --win95-blue-light: #000088;
+  --win95-desktop: #008080;
+  --win95-white: #FFFFFF;
+  --win95-black: #000000;
+
+  /* Text colors */
+  --text-primary: #000000;
+  --text-light: #AAAAAA;
+  --text-white: #FFFFFF;
+
+  /* Taskbar */
+  --taskbar-height: 40px;
+
+  /* Window sizing */
+  --window-min-width: 520px;
+  --window-min-height: 220px;
+
+  /* Z-index layers */
+  --z-boot: 10000;
+  --z-taskbar: 1000;
+  --z-start-menu: 2000;
+  --z-window-base: 10;
+  --z-icon: 1;
+}
+
+/* Windows 95 Fonts */
+@font-face {
+  font-family: 'MSSerif';
+  src: url('/fonts/MSSansSerif.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Millennium';
+  src: url('/fonts/Millennium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Millennium-Bold';
+  src: url('/fonts/Millennium-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Terminal';
+  src: url('/fonts/Terminal.ttf') format('truetype');
+}

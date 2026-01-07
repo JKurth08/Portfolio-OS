@@ -1,0 +1,32 @@
+/* Boot Screen - Covers entire viewport */
+.boot-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  color: #AAAAAA;
+  font-family: 'Courier New', monospace;
+  padding: 40px;
+  z-index: var(--z-boot);
+  display: flex;
+  flex-direction: column;
+
+  /* Fade out animation */
+  animation: fadeOut 0.5s ease-in-out 1s forwards;
+}
+
+.boot-text {
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* Fade out keyframes */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

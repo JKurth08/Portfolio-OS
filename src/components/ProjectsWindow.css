@@ -1,0 +1,256 @@
+/* Win95-ish Explorer layout */
+.projects-explorer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  font-family: 'Millennium', sans-serif;
+  background: #C0C0C0;
+  box-sizing: border-box;
+}
+
+.projects-explorer * {
+  box-sizing: border-box;
+}
+
+/* Body split */
+.pw-body {
+  display: flex;
+  flex: 1;
+  min-height: 0; /* allows proper scrolling panes */
+}
+
+/* Left pane */
+.project-sidebar {
+  width: 260px;
+  background: #C0C0C0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pw-sideheader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0px 4px;
+  font-family: 'Millennium-Bold', sans-serif;
+  font-size: 12px;
+  border-bottom: 2px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+}
+
+.pw-folder-icon {
+  width: 56px;
+  height: 56px;
+  image-rendering: pixelated;
+}
+
+.project-list {
+  flex: 1;
+  overflow-y: auto;
+  background: #FFFFFF;
+  border: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080; /* sunken list */
+}
+
+/* Sidebar items */
+.project-item {
+  width: 100%;
+  text-align: left;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 13px;
+  border: none;
+  background: transparent;
+}
+
+.project-item:hover {
+  background: #E0E0E0;
+}
+
+.project-item.selected {
+  background: #000080;
+  color: #FFFFFF;
+}
+
+.file-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  image-rendering: pixelated;
+}
+
+.project-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Status bar (classic bottom strip) */
+.pw-statusbar {
+  padding: 6px 10px;
+  font-size: 12px;
+  background: #C0C0C0;
+  border-top: 2px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* The requested vertical divider */
+.pw-splitter {
+  width: 6px;
+  background: #C0C0C0;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #FFFFFF;
+}
+
+/* Right pane */
+.project-detail {
+  flex: 1;
+  min-width: 0;
+  background: #C0C0C0;
+  overflow: auto;
+  padding: 8px; /* slightly tighter than 10px */
+}
+
+.pw-details-panel {
+  background: #2B2B2B;
+  border: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080; /* sunken */
+  padding: 20px;
+  color: #E0E0E0;
+}
+
+.pw-details-header {
+  padding: 0;
+  margin-bottom: 20px;
+  background: transparent;
+  border: none;
+}
+
+.pw-details-title {
+  font-family: 'Courier New', monospace;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: #FFFFFF;
+}
+
+.pw-details-subtitle {
+  font-size: 14px;
+  color: #B0B0B0;
+  margin-top: 6px;
+}
+
+/* Group boxes (very Win95) */
+.pw-group {
+  margin: 20px 0;
+  padding: 0;
+  border: none;
+}
+
+.pw-group > legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.pw-paragraph {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #D0D0D0;
+}
+
+/* Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background: #404040;
+  border: 1px solid #606060;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: #E0E0E0;
+}
+
+/* Bullets */
+.pw-bullets {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #D0D0D0;
+}
+
+/* Links as Win95 buttons */
+.pw-linkrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pw-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: #000;
+  text-decoration: none;
+  background: #C0C0C0;
+  border: 2px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  font-family: 'Millennium-Bold', sans-serif;
+}
+
+.pw-btn:hover {
+  background: #DFDFDF;
+}
+
+.pw-btn:active {
+  border-color: #000000 #FFFFFF #FFFFFF #000000;
+  padding-left: 13px;
+  padding-top: 7px;
+}
+
+/* Empty state */
+.empty-state {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: #404040;
+  font-size: 13px;
+}
+
+.pw-muted {
+  font-size: 12px;
+  color: #808080;
+}
+
+/* Sidebar scrollbar: chunky Win95 feel */
+.project-list::-webkit-scrollbar {
+  width: 16px;
+}
+.project-list::-webkit-scrollbar-track {
+  background: #C0C0C0;
+}
+.project-list::-webkit-scrollbar-thumb {
+  background: #808080;
+  border: 2px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+}
+.project-list::-webkit-scrollbar-thumb:hover {
+  background: #A0A0A0;
+}
