@@ -77,7 +77,7 @@ const PROJECTS = [
     id: 'portfolio',
     title: 'PortfolioOS',
     subtitle: 'Full-stack portfolio site with Windows 95 aesthetic',
-    icon: 'icons/server.png',
+    icon: 'icons/react.svg',
     stack: ['React 18', 'JavaScript', 'CSS3', 'Vite', 'Node.js', 'npm', 'ESLint', 'HTML5'],
     summary:
       'A fully interactive portfolio website that recreates the Windows 95 desktop experience in the browser. Built with React for component-based architecture and state management, bundled with Vite for lightning-fast development, and deployed as a static site. Demonstrates modern frontend development practices while paying homage to classic OS design patterns.',

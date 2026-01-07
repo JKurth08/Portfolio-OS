@@ -8,6 +8,9 @@ import TerminalWindow from './TerminalWindow'
 import Taskbar from './Taskbar'
 import './Desktop.css'
 
+// Helper to get correct asset path for GitHub Pages
+const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+
 /**
  * Desktop Component
  *
@@ -37,28 +40,28 @@ function Desktop() {
     {
       id: 'about',
       label: 'About Me',
-      icon: '/icons/folder.png',
+      icon: getAssetPath('icons/folder.png'),
       position: { top: 20, left: 20 },
       windowId: 'about'
     },
     {
       id: 'projects',
       label: 'Projects',
-      icon: '/icons/folder_2.png',
+      icon: getAssetPath('icons/folder_2.png'),
       position: { top: 140, left: 20 },
       windowId: 'projects'
     },
     {
       id: 'contact',
       label: 'Contact',
-      icon: '/icons/editor.png',
+      icon: getAssetPath('icons/editor.png'),
       position: { top: 260, left: 20 },
       windowId: 'contact'
     },
     {
       id: 'terminal',
       label: 'Terminal',
-      icon: '/icons/terminal.png',
+      icon: getAssetPath('icons/terminal.png'),
       position: { top: 380, left: 20 },
       windowId: 'terminal'
     }
@@ -137,7 +140,7 @@ function Desktop() {
         <Window
           id="about"
           title="About Me"
-          icon="/icons/folder.png"
+          icon={getAssetPath('icons/folder.png')}
           initialPosition={{ x: 450, y: 75 }}
           initialSize={{ width: 900, height: 600 }}
           onClose={() => closeWindow('about')}
@@ -154,7 +157,7 @@ function Desktop() {
         <Window
           id="projects"
           title="Projects"
-          icon="/icons/folder_2.png"
+          icon={getAssetPath('icons/folder_2.png')}
           initialPosition={{ x: 325, y: 110 }}
           initialSize={{ width: 1000, height: 700 }}
           onClose={() => closeWindow('projects')}
@@ -171,7 +174,7 @@ function Desktop() {
         <Window
           id="contact"
           title="Contact"
-          icon="/icons/editor.png"
+          icon={getAssetPath('icons/editor.png')}
           initialPosition={{ x: 1350, y: 75 }}
           initialSize={{ width: 300, height: 825 }}
           onClose={() => closeWindow('contact')}
@@ -188,7 +191,7 @@ function Desktop() {
         <Window
           id="terminal"
           title="Command Prompt"
-          icon="/icons/terminal.png"
+          icon={getAssetPath('icons/terminal.png')}
           initialPosition={{ x: 200, y: 200 }}
           initialSize={{ width: 700, height: 500 }}
           onClose={() => closeWindow('terminal')}
