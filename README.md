@@ -1,16 +1,62 @@
-# React + Vite
+# Portfolio-OS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully interactive portfolio website that recreates the Windows 95 desktop experience in the browser. This project demonstrates modern frontend development practices while paying homage to classic OS design patterns.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 18** - Component-based UI with hooks for state management
+- **Vite** - Lightning-fast build tool with HMR during development
+- **JavaScript** - Modern ES6+ syntax
+- **CSS3** - Pixel-perfect Win95 UI recreation
+- **Node.js & npm** - Dependency management and build scripts
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🖥️ Authentic Windows 95 desktop interface
+- 🪟 Draggable, resizable windows with minimize/maximize/close
+- 📋 Taskbar with Start menu and window management
+- 📁 Multiple app windows (Projects, About, Contact, Terminal)
+- 🎨 Custom Win95 styling with classic gray palette
+- ⚡ Fast development with Vite's HMR
+- 📦 Static site - no backend required
 
-## Expanding the ESLint configuration
+## Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Deployment
+
+This is a static site that can be deployed to:
+- GitHub Pages
+- Netlify
+- Vercel
+- Any static hosting service
+
+The production build outputs optimized files to the `dist/` directory.
+
+## Project Structure
+
+```
+src/
+├── components/      # React components (Window, Desktop, etc.)
+├── assets/         # Fonts, icons, images
+├── App.jsx         # Main application component
+└── main.jsx        # Application entry point
+public/             # Static assets
+```
+
+---
+
+Built with 💾 by Jack Kurth
