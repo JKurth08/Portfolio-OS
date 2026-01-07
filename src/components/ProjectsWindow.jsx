@@ -1,6 +1,9 @@
 import { useMemo, useState } from 'react'
 import './ProjectsWindow.css'
 
+// Helper to get correct asset path for GitHub Pages
+const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+
 // ============================================
 // Project template (edit here, UI updates auto)
 // ============================================
@@ -9,7 +12,7 @@ const PROJECTS = [
     id: 'ascii-draw',
     title: 'Ascii-Draw',
     subtitle: 'Text → ASCII art renderer',
-    icon: '/icons/c.png',
+    icon: 'icons/c.png',
     stack: ['C', 'Java', 'File I/O', 'Algorithm Design'],
     summary:
       'A dual-implementation ASCII art generator that converts text-based brightness maps into visual art. The C version prioritizes performance with direct file I/O and memory-efficient processing, while the Java implementation emphasizes object-oriented design and cross-platform compatibility. Both versions support configurable canvas dimensions and multiple rendering modes.',
@@ -30,7 +33,7 @@ const PROJECTS = [
     id: 'weather',
     title: 'WeatherApp',
     subtitle: 'REST API integration with local caching',
-    icon: '/icons/python.png',
+    icon: 'icons/python.png',
     stack: ['Python 3', 'REST API', 'JSON', 'Tkinter', 'File I/O', 'Environment Variables'],
     summary:
       'A weather data application that demonstrates API integration, local caching strategies, and dual-interface design. Built with Python, it fetches real-time weather from external APIs while implementing intelligent caching to minimize redundant requests. Supports both command-line and graphical interfaces for maximum flexibility.',
@@ -52,7 +55,7 @@ const PROJECTS = [
     id: 'terminal',
     title: 'TerminalEmulator',
     subtitle: 'Custom pseudo-terminal with low-level I/O',
-    icon: '/icons/c.png',
+    icon: 'icons/c.png',
     stack: ['C', 'POSIX', 'ncurses', 'Systems Programming', 'I/O Control'],
     summary:
       'A lightweight terminal emulator built from the ground up in C, demonstrating deep understanding of POSIX terminal control, character-level I/O, and buffer management. Features custom input echo handling, scrollback functionality, and careful attention to edge cases that plague naive terminal implementations.',
@@ -74,7 +77,7 @@ const PROJECTS = [
     id: 'portfolio',
     title: 'PortfolioOS',
     subtitle: 'Full-stack portfolio site with Windows 95 aesthetic',
-    icon: '../src/assets/react.svg',
+    icon: 'icons/server.png',
     stack: ['React 18', 'JavaScript', 'CSS3', 'Vite', 'Node.js', 'npm', 'ESLint', 'HTML5'],
     summary:
       'A fully interactive portfolio website that recreates the Windows 95 desktop experience in the browser. Built with React for component-based architecture and state management, bundled with Vite for lightning-fast development, and deployed as a static site. Demonstrates modern frontend development practices while paying homage to classic OS design patterns.',
@@ -128,7 +131,7 @@ function ProjectsWindow() {
         {/* Left pane */}
         <aside className="project-sidebar" aria-label="Projects">
           <div className="pw-sideheader">
-            <img src="/icons/server.png" alt="" className="pw-folder-icon" />
+            <img src={getAssetPath('icons/server.png')} alt="" className="pw-folder-icon" />
             <span className="pw-sideheader-text">Projects</span>
           </div>
 
@@ -142,7 +145,7 @@ function ProjectsWindow() {
                 role="option"
                 aria-selected={selectedId === project.id}
               >
-                <img src={project.icon} alt="" className="file-icon" />
+                <img src={getAssetPath(project.icon)} alt="" className="file-icon" />
                 <span className="project-name">{project.title}</span>
               </button>
             ))}

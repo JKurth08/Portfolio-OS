@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import './Taskbar.css'
 
+// Helper to get correct asset path for GitHub Pages
+const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+
 /**
  * Taskbar Component - Windows 95 style taskbar
  *
@@ -46,10 +49,10 @@ function Taskbar({ minimizedWindows = [], activeWindow, onWindowClick }) {
 
   // Window icons mapping
   const windowIcons = {
-    about: '/icons/folder.png',
-    projects: '/icons/folder_2.png',
-    contact: '/icons/editor.png',
-    terminal: '/icons/terminal.png'
+    about: getAssetPath('icons/folder.png'),
+    projects: getAssetPath('icons/folder_2.png'),
+    contact: getAssetPath('icons/editor.png'),
+    terminal: getAssetPath('icons/terminal.png')
   }
 
   // Handle reboot
@@ -67,7 +70,7 @@ function Taskbar({ minimizedWindows = [], activeWindow, onWindowClick }) {
           </div>
           <div className="start-menu-bottom">
             <button className="start-menu-item" onClick={handleReboot}>
-              <img src="/icons/computer.png" alt="Reboot" className="start-menu-icon-img" />
+              <img src={getAssetPath('icons/computer.png')} alt="Reboot" className="start-menu-icon-img" />
               <span>Reboot</span>
             </button>
           </div>
@@ -79,7 +82,7 @@ function Taskbar({ minimizedWindows = [], activeWindow, onWindowClick }) {
         className={`start-button ${startMenuOpen ? 'active' : ''}`}
         onClick={() => setStartMenuOpen(!startMenuOpen)}
       >
-        <img src="/icons/windows-icon.webp" alt="Start" className="start-icon" />
+        <img src={getAssetPath('icons/windows-icon.webp')} alt="Start" className="start-icon" />
         <span>Start</span>
       </button>
 

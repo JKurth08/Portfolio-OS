@@ -2,6 +2,9 @@ import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import './ContactWindow.css'
 
+// Helper to get correct asset path for GitHub Pages
+const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+
 /**
  * ContactWindow Component
  *
@@ -105,7 +108,7 @@ function ContactWindow() {
         <div className="confirmation-page">
           <h1>Message Sent!</h1>
           <img
-            src="/icons/success.png"
+            src={getAssetPath('icons/success.png')}
             alt="Success"
             className="confirmation-icon-img"
           />
@@ -130,7 +133,7 @@ function ContactWindow() {
         <div className="confirmation-page error-page">
           <h1>Oops!</h1>
           <img
-            src="/icons/error.png"
+            src={getAssetPath('icons/error.png')}
             alt="Error"
             className="confirmation-icon-img error-icon-img"
           />
@@ -163,12 +166,12 @@ function ContactWindow() {
       {/* Social Media Badges */}
       <div className="social-row">
         <a className="badge" href="https://github.com/JKurth08" target="_blank" rel="noopener noreferrer">
-          <img src="/icons/github.webp" alt="GitHub" />
+          <img src={getAssetPath('icons/github.webp')} alt="GitHub" />
           <span>GitHub</span>
         </a>
 
         <a className="badge" href="https://www.linkedin.com/in/jkurth0/" target="_blank" rel="noopener noreferrer">
-          <img src="/icons/world.webp" alt="LinkedIn" />
+          <img src={getAssetPath('icons/world.webp')} alt="LinkedIn" />
           <span>LinkedIn</span>
         </a>
       </div>

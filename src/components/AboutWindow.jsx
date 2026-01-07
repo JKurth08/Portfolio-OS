@@ -1,5 +1,8 @@
 import './AboutWindow.css'
 
+// Helper to get correct asset path for GitHub Pages
+const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+
 /**
  * AboutWindow Component
  *
@@ -25,10 +28,10 @@ function AboutWindow({ onOpenContact }) {
       <div className="divider"></div>
 
       <div className="section resume-section">
-        <img src="/icons/resume.png" alt="Resume icon" className="resume-image" />
+        <img src={getAssetPath('icons/resume.png')} alt="Resume icon" className="resume-image" />
         <div className="resume-text">
           <h2>My Resume!</h2>
-          <a href="/resume/Resume.pdf" download>Download my resume</a>
+          <a href={getAssetPath('resume/Resume.pdf')} download>Download my resume</a>
         </div>
       </div>
 
