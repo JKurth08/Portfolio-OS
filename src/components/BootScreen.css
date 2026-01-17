@@ -10,8 +10,6 @@
   font-family: 'Courier New', monospace;
   padding: 40px;
   z-index: var(--z-boot);
-  display: flex;
-  flex-direction: column;
 
   /* Fade out animation */
   animation: fadeOut 0.5s ease-in-out 1s forwards;
@@ -21,6 +19,7 @@
   font-size: 14px;
   line-height: 1.5;
   white-space: pre-wrap;
+  text-align: left;
 }
 
 /* Fade out keyframes */
