@@ -40,15 +40,22 @@ function AboutWindow({ onOpenContact }) {
       <div className="section">
         <h2>About Me</h2>
         <p>
-          From a young age, I've been fascinated with how technology works.
-          I began programming in high school, which quickly led me into deeper studies of
-          <strong> AI, cybersecurity, and low-level system development</strong>.
-          I love working on projects that blend creativity and logic — from
-          emulating old-school operating systems to building machine learning models.
-        </p>
-        <p>
-          Outside of coding, I enjoy exploring the outdoors in Michigan's Upper Peninsula,
-          reading about computer history, and automating everyday tasks for fun.
+          Hi, I’m Jack!
+          I am a third-year Computer Science student at Michigan Technological University, minoring in Cybersecurity.
+
+          My goal is simple; learn as much as I can about every programming discipline while here at MTU.
+
+          I learn best by building. Alongside coursework, I’ve taught myself full-stack development, low-level programming, and systems work (including Arduino/Raspberry Pi projects). I’m especially interested in how software communicates with hardware: operating systems, networking, and security.
+
+          On the networking/security side, I’ve worked with Linux (Kali) and common defensive/security tooling, focusing on fundamentals like network traffic analysis, segmentation, and IDS/IPS concepts.
+
+          I have built many full stack websites as well. From simple E-commerce to fully functioning personal portfolios. I enjoy using the React framework and for backend I have worked with Python Flask, PHP, Node.js and Java. 
+
+          Right now I’m deep into terminal tooling and automation. My current project is building a terminal emulator in C and Bash while sharpening my scripting and systems skills. 
+
+          I also love to get outside. I am an avid mountain biker and snowboarder, I love participating in Downhill MTB racing and slope-style snowboarding. However I don't just ride the bikes, I also work on them; I am a very experienced bike mechanic and know my way around a tool very well. 
+
+          Please reach out! I am always on the hunt for new opportunities and my goal is to secure a summer 2026 internship related to software development.
         </p>
       </div>
 
