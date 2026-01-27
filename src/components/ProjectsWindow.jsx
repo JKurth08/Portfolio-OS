@@ -46,29 +46,29 @@ const PROJECTS = [
       'API key validation and configuration checks at startup'
     ],
     links: {
-      github: '#',
+      github: 'https://github.com/JKurth08/Python-Weather-App',
       demo: '',
       writeup: ''
     }
   },
   {
-    id: 'terminal',
-    title: 'TerminalEmulator',
-    subtitle: 'Custom pseudo-terminal with low-level I/O',
+    id: 'raycaster',
+    title: 'Raycaster',
+    subtitle: '2D raycasting engine with real-time rendering',
     icon: 'icons/c.png',
-    stack: ['C', 'POSIX', 'ncurses', 'Systems Programming', 'I/O Control'],
+    stack: ['C', 'Graphics Programming', 'Linear Algebra', 'Real-time Rendering', 'Game Development'],
     summary:
-      'A lightweight terminal emulator built from the ground up in C, demonstrating deep understanding of POSIX terminal control, character-level I/O, and buffer management. Features custom input echo handling, scrollback functionality, and careful attention to edge cases that plague naive terminal implementations.',
+      'A 2D raycasting engine built entirely in C, implementing the classic rendering technique popularized by early 3D games like Wolfenstein 3D. The engine casts rays from a virtual camera to detect walls and calculates perspective-correct rendering in real-time, creating an immersive pseudo-3D environment from a 2D map.',
     highlights: [
-      'Direct terminal control using POSIX termios for raw input mode and echo management',
-      'Custom scrollback buffer with bounds checking prevents display jitter on overflow',
-      'Character-level input processing with proper handling of special keys (backspace, arrows, etc.)',
-      'Precise input/output alignment ensures echo appears correctly in all edge cases',
-      'Minimal memory footprint with efficient circular buffer implementation',
-      'Clean separation between input handling, display logic, and command execution'
+      'Implements DDA (Digital Differential Analyzer) algorithm for efficient ray-wall intersection detection',
+      'Real-time perspective projection creates convincing 3D depth from 2D map data',
+      'Optimized rendering loop maintains smooth frame rates without GPU acceleration',
+      'Player movement system with collision detection against map geometry',
+      'Configurable field of view and rendering resolution for performance tuning',
+      'Clean C implementation with no external graphics libraries for core raycasting logic'
     ],
     links: {
-      github: '#',
+      github: 'https://github.com/JKurth08/RayCaster',
       demo: '',
       writeup: ''
     }

@@ -64,6 +64,13 @@ function Desktop() {
       icon: getAssetPath('icons/terminal.png'),
       position: { top: 380, left: 20 },
       windowId: 'terminal'
+    },
+    {
+      id: 'bin',
+      label: 'Trash',
+      icon: getAssetPath('icons/bin.png'),
+      position: { top: 500, left: 20 },
+      windowId: null
     }
   ]
 

@@ -71,18 +71,22 @@ function Window({
   // === VIEWPORT RESIZE HANDLING ===
   useEffect(() => {
     const handleViewportResize = () => {
+      // Desktop is already inset by bezel, so use full inner dimensions
+      const desktopWidth = window.innerWidth - 32 // Account for bezel
+      const desktopHeight = window.innerHeight - 40 - 32 // Account for taskbar and bezel
+
       // Skip if maximized (handled by CSS)
       if (isMaximized) {
         setSize({
-          width: window.innerWidth,
-          height: window.innerHeight - 40
+          width: desktopWidth,
+          height: desktopHeight
         })
         return
       }
 
       // Check if window is now outside viewport bounds
-      const maxX = window.innerWidth - size.width
-      const maxY = window.innerHeight - size.height - 40
+      const maxX = desktopWidth - size.width
+      const maxY = desktopHeight - size.height
 
       // Adjust position if needed
       let newX = position.x
@@ -108,13 +112,13 @@ function Window({
       let newHeight = size.height
       let sizeNeedsUpdate = false
 
-      if (size.width > window.innerWidth) {
-        newWidth = Math.max(400, window.innerWidth)
+      if (size.width > desktopWidth) {
+        newWidth = Math.max(400, desktopWidth)
         sizeNeedsUpdate = true
       }
 
-      if (size.height > window.innerHeight - 40) {
-        newHeight = Math.max(300, window.innerHeight - 40)
+      if (size.height > desktopHeight) {
+        newHeight = Math.max(300, desktopHeight)
         sizeNeedsUpdate = true
       }
 
@@ -150,6 +154,10 @@ function Window({
   const handleDragMove = (e) => {
     if (!dragState.current.isDragging) return
 
+    // Desktop is already inset by bezel
+    const desktopWidth = window.innerWidth - 32
+    const desktopHeight = window.innerHeight - 40 - 32
+
     const dx = e.clientX - dragState.current.startX
     const dy = e.clientY - dragState.current.startY
 
@@ -158,8 +166,8 @@ function Window({
     let newY = dragState.current.startPosY + dy
 
     // Get window dimensions
-    const maxX = window.innerWidth - size.width
-    const maxY = window.innerHeight - size.height - 40 // Account for taskbar
+    const maxX = desktopWidth - size.width
+    const maxY = desktopHeight - size.height
 
     // Constrain to viewport bounds
     newX = Math.max(0, Math.min(newX, maxX))
@@ -196,6 +204,10 @@ function Window({
   const handleResizeMove = (e) => {
     if (!resizeState.current.isResizing) return
 
+    // Desktop is already inset by bezel
+    const desktopWidth = window.innerWidth - 32
+    const desktopHeight = window.innerHeight - 40 - 32
+
     const dx = e.clientX - resizeState.current.startX
     const dy = e.clientY - resizeState.current.startY
 
@@ -204,8 +216,8 @@ function Window({
     const newHeight = Math.max(300, resizeState.current.startHeight + dy)
 
     // Constrain to viewport (don't resize beyond screen edge)
-    const maxWidth = window.innerWidth - position.x
-    const maxHeight = window.innerHeight - position.y - 40 // Account for taskbar
+    const maxWidth = desktopWidth - position.x
+    const maxHeight = desktopHeight - position.y
 
     setSize({
       width: Math.min(newWidth, maxWidth),
@@ -221,6 +233,10 @@ function Window({
 
   // === WINDOW CONTROLS ===
   const handleMaximize = () => {
+    // Desktop is already inset by bezel
+    const desktopWidth = window.innerWidth - 32
+    const desktopHeight = window.innerHeight - 40 - 32
+
     if (isMaximized) {
       // Restore
       setPosition(preMaximizeState.current.position)
@@ -231,8 +247,8 @@ function Window({
       preMaximizeState.current = { position, size }
       setPosition({ x: 0, y: 0 })
       setSize({
-        width: window.innerWidth,
-        height: window.innerHeight - 40 // Account for taskbar
+        width: desktopWidth,
+        height: desktopHeight
       })
       setIsMaximized(true)
     }

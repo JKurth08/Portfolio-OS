@@ -60,14 +60,33 @@ function DesktopIcon({ id, label, icon, position, isSelected, onSelect, onOpen }
   const handleMouseMove = (e) => {
     if (!dragState.current.isDragging) return
 
+    // Desktop is already inset by bezel
+    const desktopWidth = window.innerWidth - 32
+    const desktopHeight = window.innerHeight - 40 - 32
+
+    // Icon dimensions (approximate)
+    const ICON_WIDTH = 80
+    const ICON_HEIGHT = 100
+
     // Calculate how far mouse has moved
     const dx = e.clientX - dragState.current.startX
     const dy = e.clientY - dragState.current.startY
 
+    // Calculate new position
+    let newLeft = dragState.current.startLeft + dx
+    let newTop = dragState.current.startTop + dy
+
+    // Constrain to desktop bounds
+    const maxLeft = desktopWidth - ICON_WIDTH
+    const maxTop = desktopHeight - ICON_HEIGHT
+
+    newLeft = Math.max(0, Math.min(newLeft, maxLeft))
+    newTop = Math.max(0, Math.min(newTop, maxTop))
+
     // Update position
     setPos({
-      left: dragState.current.startLeft + dx,
-      top: dragState.current.startTop + dy
+      left: newLeft,
+      top: newTop
     })
   }
 
