@@ -3,29 +3,12 @@ import './DesktopIcon.css'
 
 /**
  * DesktopIcon Component
- *
- * A draggable, selectable desktop icon.
- *
- * Props explained:
- * @param {string} id - Unique identifier for the icon
- * @param {string} label - Text displayed under the icon
- * @param {string} icon - Path to the icon image
- * @param {object} position - Initial position {top, left}
- * @param {boolean} isSelected - Is this icon currently selected?
- * @param {function} onSelect - Callback when icon is clicked
- * @param {function} onOpen - Callback when icon is double-clicked
- *
- * React Concepts:
- * - Props: Receiving data from parent component
- * - useState: Managing position for dragging
- * - useRef: Tracking drag state without causing re-renders
- * - Event handlers: Mouse events for dragging
  */
 function DesktopIcon({ id, label, icon, position, isSelected, onSelect, onOpen }) {
-  // STATE: Track icon position
+
   const [pos, setPos] = useState(position)
 
-  // REF: Track drag state (doesn't cause re-render when changed)
+
   const dragState = useRef({
     isDragging: false,
     startX: 0,
@@ -34,7 +17,7 @@ function DesktopIcon({ id, label, icon, position, isSelected, onSelect, onOpen }
     startTop: 0
   })
 
-  // HANDLER: Mouse down - start potential drag
+  // Mouse down - start potential drag
   const handleMouseDown = (e) => {
     // Only left click
     if (e.button !== 0) return
@@ -90,7 +73,6 @@ function DesktopIcon({ id, label, icon, position, isSelected, onSelect, onOpen }
     })
   }
 
-  // HANDLER: Mouse up - end drag
   const handleMouseUp = () => {
     dragState.current.isDragging = false
 
@@ -99,13 +81,11 @@ function DesktopIcon({ id, label, icon, position, isSelected, onSelect, onOpen }
     document.removeEventListener('mouseup', handleMouseUp)
   }
 
-  // HANDLER: Single click selects the icon
   const handleClick = (e) => {
     e.stopPropagation() // Prevent desktop from deselecting
     onSelect()
   }
 
-  // HANDLER: Double click opens the window
   const handleDoubleClick = (e) => {
     e.stopPropagation()
     onOpen()

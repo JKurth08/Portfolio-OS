@@ -1,10 +1,10 @@
 /* Desktop - The main background area */
 .desktop {
-  width: calc(100vw - 32px); /* Account for 16px bezel on each side */
-  height: calc(100vh - var(--taskbar-height) - 32px); /* Account for bezel */
+  width: calc(100vw - 32px); 
+  height: calc(100vh - var(--taskbar-height) - 32px); 
   position: fixed;
-  top: 16px; /* Bezel width */
-  left: 16px; /* Bezel width */
+  top: 16px;
+  left: 16px;
   padding: 20px;
   overflow: hidden;
 }

@@ -7,16 +7,6 @@ const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//,
 
 /**
  * ContactWindow Component
- *
- * Contact form with social media badges.
- * Features form validation, honeypot spam protection, and EmailJS integration.
- *
- * EmailJS Setup:
- * 1. Sign up at https://www.emailjs.com/
- * 2. Create an email service (Gmail, Outlook, etc.)
- * 3. Create an email template with variables: {{from_name}}, {{from_email}}, {{company}}, {{message}}
- * 4. Get your Service ID, Template ID, and Public Key from the dashboard
- * 5. Replace the placeholder values below
  */
 function ContactWindow() {
   // STATE: Form data
@@ -31,7 +21,6 @@ function ContactWindow() {
   // STATE: Form submission status
   const [submitStatus, setSubmitStatus] = useState(null) // null, 'success', 'error', or 'sending'
 
-  // HANDLER: Update form field
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData(prev => ({
@@ -44,7 +33,6 @@ function ContactWindow() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    // Honeypot check - if website field is filled, it's likely a bot
     if (formData.website) {
       console.log('Bot detected - honeypot triggered')
       return
@@ -65,9 +53,9 @@ function ContactWindow() {
     setSubmitStatus('sending')
 
     // Send email via EmailJS
-    const SERVICE_ID = 'service_zu73s0d'      // Get from EmailJS dashboard
-    const TEMPLATE_ID = 'template_vu0hvh7'    // Get from EmailJS dashboard
-    const PUBLIC_KEY = 'kg02rwt8u25RUPKcX'      // Get from EmailJS dashboard
+    const SERVICE_ID = 'service_zu73s0d'      
+    const TEMPLATE_ID = 'template_vu0hvh7'    
+    const PUBLIC_KEY = 'kg02rwt8u25RUPKcX'     
 
     // Prepare template parameters
     const templateParams = {

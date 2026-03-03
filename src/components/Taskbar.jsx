@@ -6,12 +6,7 @@ const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//,
 
 /**
  * Taskbar Component - Windows 95 style taskbar
- *
- * Props:
- * @param {Array} minimizedWindows - Array of minimized window IDs
- * @param {string} activeWindow - Currently active window ID
- * @param {function} onWindowClick - Callback when window button is clicked
- */
+*/
 function Taskbar({ minimizedWindows = [], activeWindow, onWindowClick }) {
   // STATE: Current time
   const [time, setTime] = useState(new Date())
@@ -62,11 +57,9 @@ function Taskbar({ minimizedWindows = [], activeWindow, onWindowClick }) {
 
   return (
     <div className="taskbar">
-      {/* Start Menu */}
       {startMenuOpen && (
         <div className="start-menu">
           <div className="start-menu-content">
-            {/* Empty content area */}
           </div>
           <div className="start-menu-bottom">
             <button className="start-menu-item" onClick={handleReboot}>
@@ -77,7 +70,7 @@ function Taskbar({ minimizedWindows = [], activeWindow, onWindowClick }) {
         </div>
       )}
 
-      {/* Start Button */}
+
       <button
         className={`start-button ${startMenuOpen ? 'active' : ''}`}
         onClick={() => setStartMenuOpen(!startMenuOpen)}
@@ -86,10 +79,8 @@ function Taskbar({ minimizedWindows = [], activeWindow, onWindowClick }) {
         <span>Start</span>
       </button>
 
-      {/* Divider */}
       <div className="taskbar-divider"></div>
 
-      {/* Minimized Window Buttons */}
       <div className="taskbar-windows">
         {minimizedWindows.map((windowId) => (
           <button
@@ -105,7 +96,6 @@ function Taskbar({ minimizedWindows = [], activeWindow, onWindowClick }) {
         ))}
       </div>
 
-      {/* System Tray / Clock */}
       <div className="taskbar-tray">
         <div className="taskbar-clock">
           {formatTime(time)}

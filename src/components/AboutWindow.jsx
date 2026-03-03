@@ -5,12 +5,6 @@ const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//,
 
 /**
  * AboutWindow Component
- *
- * Content for the About Me window.
- * This gets rendered inside the Window component.
- *
- * Props:
- * @param {function} onOpenContact - Callback to open the Contact window
  */
 function AboutWindow({ onOpenContact }) {
   return (

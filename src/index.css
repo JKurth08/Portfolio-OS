@@ -8,7 +8,6 @@
   box-sizing: border-box;
 }
 
-/* Body - Desktop Background with CRT Monitor Bezel */
 body {
   font-family: 'MSSerif', 'Courier New', monospace;
   background-color: var(--win95-desktop);
@@ -20,10 +19,9 @@ body {
   /* Thick CRT monitor bezel effect */
   border: 16px solid #2a2a2a;
   box-shadow:
-    /* Inner dark edge for depth */
+    /* Inner dark edge */
     inset 0 0 20px rgba(0, 0, 0, 0.8),
     inset 4px 4px 8px rgba(0, 0, 0, 0.5),
-    /* Outer glow for ambient light */
     0 0 30px rgba(0, 0, 0, 0.5);
 
   /* Subtle highlight on bezel edges */

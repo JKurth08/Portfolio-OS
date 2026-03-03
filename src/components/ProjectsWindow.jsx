@@ -4,9 +4,7 @@ import './ProjectsWindow.css'
 // Helper to get correct asset path for GitHub Pages
 const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
 
-// ============================================
-// Project template (edit here, UI updates auto)
-// ============================================
+// Project template 
 const PROJECTS = [
   {
     id: 'ascii-draw',

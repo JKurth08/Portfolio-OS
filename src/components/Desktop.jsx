@@ -13,29 +13,17 @@ const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//,
 
 /**
  * Desktop Component
- *
- * This is the main desktop area where icons are displayed.
- *
- * React Concepts:
- * - Component composition: Desktop contains multiple DesktopIcon components
- * - Array mapping: We'll map over an array of icons to render them
- * - Props: We pass data down to DesktopIcon components
- */
+*/
 function Desktop() {
-  // STATE: Track which icon is currently selected (null = none)
+  
   const [selectedIcon, setSelectedIcon] = useState(null)
 
-  // STATE: Track which windows are open (array maintains order, last = top)
   const [openWindows, setOpenWindows] = useState([])
 
-  // STATE: Track the active (focused) window
   const [activeWindow, setActiveWindow] = useState(null)
 
-  // STATE: Track which windows are minimized
   const [minimizedWindows, setMinimizedWindows] = useState([])
 
-  // Define the desktop icons data
-  // Each icon has: id, label, icon path, position, and what window it opens
   const icons = [
     {
       id: 'about',
@@ -98,9 +86,8 @@ function Desktop() {
     }
   }
 
-  // HANDLER: Focus a window (bring to front)
+  // Focus a window (bring to front)
   const focusWindow = (windowId) => {
-    // If minimized, restore it first
     if (minimizedWindows.includes(windowId)) {
       setMinimizedWindows(prev => prev.filter(id => id !== windowId))
     }
@@ -113,14 +100,14 @@ function Desktop() {
     setActiveWindow(windowId)
   }
 
-  // HANDLER: Minimize a window
+  // Minimize a window
   const minimizeWindow = (windowId) => {
     if (!minimizedWindows.includes(windowId)) {
       setMinimizedWindows([...minimizedWindows, windowId])
     }
   }
 
-  // HELPER: Get z-index for a window based on its position in the array
+  // Get z-index for a window based on its position in the array
   const getZIndex = (windowId) => {
     const index = openWindows.indexOf(windowId)
     return index === -1 ? 1 : 10 + index
@@ -142,7 +129,6 @@ function Desktop() {
         />
       ))}
 
-      {/* Render open windows */}
       {openWindows.includes('about') && (
         <Window
           id="about"
@@ -211,7 +197,6 @@ function Desktop() {
         </Window>
       )}
 
-      {/* Taskbar */}
       <Taskbar
         minimizedWindows={minimizedWindows}
         activeWindow={activeWindow}

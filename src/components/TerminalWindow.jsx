@@ -3,12 +3,8 @@ import './TerminalWindow.css'
 
 /**
  * TerminalWindow Component
- *
- * Interactive Windows 95-style terminal with custom commands.
- * Users can type commands and get responses.
  */
 function TerminalWindow() {
-  // ASCII Art for welcome screen
   const asciiArt = ` .----------------.
 | .--------------. |
 | |     _____    | |
@@ -26,7 +22,6 @@ Jack Kurth Portfolio Terminal [Version 1.0.0]
 
 Type "help" for available commands.`
 
-  // STATE: Command history (array of {input, output} objects)
   const [history, setHistory] = useState([
     {
       input: null,
@@ -34,13 +29,10 @@ Type "help" for available commands.`
     }
   ])
 
-  // STATE: Current input value
   const [input, setInput] = useState('')
 
-  // REF: Terminal output div for auto-scrolling
   const outputRef = useRef(null)
 
-  // REF: Input field for auto-focus
   const inputRef = useRef(null)
 
   // Auto-scroll to bottom when history updates
@@ -57,7 +49,6 @@ Type "help" for available commands.`
     }
   }, [])
 
-  // HANDLER: Process command
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -197,7 +188,6 @@ Current Status: Third-year undergraduate`
           </div>
         ))}
 
-        {/* Current prompt */}
         <form onSubmit={handleSubmit} className="terminal-input-line">
           <span className="prompt-symbol">C:\Portfolio&gt;</span>
           <input

@@ -5,25 +5,7 @@ import './Window.css'
  * Window Component - Reusable Windows 95 style window
  *
  * This component creates a draggable, resizable window.
- * It's a wrapper - you pass children to render inside.
- *
- * Props:
- * @param {string} id - Unique window identifier
- * @param {string} title - Window title text
- * @param {string} icon - Path to title bar icon
- * @param {object} initialPosition - Starting position {x, y}
- * @param {object} initialSize - Starting size {width, height}
- * @param {function} onClose - Callback when close button clicked
- * @param {function} onFocus - Callback when window is clicked (brings to front)
- * @param {function} onMinimize - Callback when minimize button clicked
- * @param {boolean} isMinimized - Whether window is currently minimized
- * @param {number} zIndex - Z-index for stacking order
- * @param {ReactNode} children - Content to render inside window
- *
- * React Concepts:
- * - children prop: Special prop for nested content
- * - useRef: Track drag/resize without re-renders
- * - Controlled positioning via state
+ * It's basically a wrapper - I pass 'children' to render inside.
  */
 function Window({
   id,
@@ -38,16 +20,12 @@ function Window({
   zIndex = 10,
   children
 }) {
-  // STATE: Window position
   const [position, setPosition] = useState(initialPosition)
 
-  // STATE: Window size
   const [size, setSize] = useState(initialSize)
 
-  // STATE: Is window maximized?
   const [isMaximized, setIsMaximized] = useState(false)
 
-  // REF: Track drag state
   const dragState = useRef({
     isDragging: false,
     startX: 0,
@@ -65,13 +43,10 @@ function Window({
     startHeight: 0
   })
 
-  // REF: Store pre-maximize state
   const preMaximizeState = useRef(null)
 
-  // === VIEWPORT RESIZE HANDLING ===
   useEffect(() => {
     const handleViewportResize = () => {
-      // Desktop is already inset by bezel, so use full inner dimensions
       const desktopWidth = window.innerWidth - 32 // Account for bezel
       const desktopHeight = window.innerHeight - 40 - 32 // Account for taskbar and bezel
 
@@ -290,7 +265,6 @@ function Window({
       }}
       onClick={onFocus}
     >
-      {/* Title Bar */}
       <div
         className="title-bar"
         onMouseDown={handleTitleBarMouseDown}
@@ -306,17 +280,14 @@ function Window({
         </div>
       </div>
 
-      {/* Window Body (children go here) */}
       <div className="window-body">
         {children}
       </div>
 
-      {/* Bottom Status Bar */}
       <div className="window-bottom">
         <span>Ready</span>
       </div>
 
-      {/* Resize Handle (hidden when maximized) */}
       {!isMaximized && (
         <div
           className="resizer"
